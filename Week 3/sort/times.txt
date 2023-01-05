@@ -1,0 +1,50 @@
+sort1: bubble sort
+
+	- sorted 5000 -> 0.049s
+	- sorted 10000 -> 0.104s
+	- sorted 50000 -> 1.048s
+
+
+	- reversed 5000 -> 0.078s
+	- reversed 10000 -> 0.305s
+	- reversed 50000 -> 8.165s
+
+	
+	- random 5000 -> 0.072s
+	- random 10000 -> 0.284s
+	- random 50000 -> 8.303s
+
+
+sort2: merge sort
+
+	- sorted 5000 -> 0.045s
+	- sorted 10000 -> 0.095s
+	- sorted 50000 -> 2.226s
+
+
+	- reversed 5000 -> 0.032s
+	- reversed 10000 -> 0.033s
+	- reversed 50000 -> 0.606s
+
+	
+	- random 5000 -> 0.029s
+	- random 10000 -> 0.088s
+	- random 50000 -> 1.214s
+
+
+sort3: selection sort
+
+	- sorted 5000 -> 0.055s
+	- sorted 10000 -> 0.126s
+	- sorted 50000 -> 3.745s
+	
+
+	- reversed 5000 -> 0.061s
+	- reversed 10000 -> 0.219s
+	- reversed 50000 -> 4.570s
+
+
+	- random 5000 -> 0.079s
+	- random 10000 -> 0.190s
+	- random 50000 -> 4.064s
+
