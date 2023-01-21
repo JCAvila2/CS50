@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Part 1
+                let part1_answer_feedback = document.querySelector('#answer');
+
+                let part1_correct_answer = document.querySelector('.correct');
+                part1_correct_answer.addEventListener('click', function() {
+                    part1_correct_answer.style.background = 'green';
+                    part1_answer_feedback.innerHTML = 'Correct!';
+                });
+
+                let part1_incorrect_answer = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < part1_incorrect_answer.length; i++)
+                {
+                    part1_incorrect_answer[i].addEventListener('click', function() {
+                        part1_correct_answer.style.background = 'green';
+                        part1_incorrect_answer[i].style.background = 'red';
+                        part1_answer_feedback.innerHTML = 'Incorrect';
+                    });
+                }
+
+                // Part 2
+                let part2_answer_feedback = document.querySelector('#answer2');
+
+                let part2_button = document.querySelector('#check');
+                part2_button.addEventListener('click', function() {
+                    console.log("test part 2");
+
+                    let part2_input = document.querySelector('input');
+                    if (part2_input.value.toLowerCase() == "united kingdom")
+                    {
+                        part2_input.style.background = 'green';
+                        part2_answer_feedback.innerHTML = 'Correct!';
+
+                    }
+                    else
+                    {
+                        part2_input.style.background = 'red';
+                        part2_answer_feedback.innerHTML = 'Incorrect';
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <h3>What is the longest track on the 2023 Formula 1 calendar?</h3>
+
+                <button class="incorrect">Monza</button>
+                <button class="incorrect">Suzuka</button>
+                <button class="correct">Spa Francorchamps</button>
+                <button class="incorrect">Silverstone</button>
+
+                <p id="answer"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <h3>In which country was the first Formula one race held?</h3>
+
+                <input type="text">
+                <button id="check">Check</button>
+
+                <p id="answer2"></p>
+            </div>
+        </div>
+    </body>
+</html>
