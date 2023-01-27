@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    C$50
+{% endblock %}
+
+{% block main %}
+    <main class="container py-5 text-center">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-start">Name</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">TOTAL</th>
+                </tr>
+            </thead>
+           <tbody>
+                {% for row in content.rows %}
+                    {% if row["n_shares"] > 0 %}
+                        <tr>
+                            <td class="text-start"> {{ row["symbol"].upper() }} </td>
+                            <td class="text-start"> {{ row["name"] }} </td>
+                            <td class="text-end"> {{ row["n_shares"] }} </td>
+                            <td class="text-end"> {{ row["price"] | usd }} </td>
+                            <td class="text-end"> {{ row["total"] | usd }} </td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                    <td class="border-0 text-end"> {{ content.cash | usd }} </td>
+                </tr>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                    <td class="border-0 w-bold text-end"> {{ content["total"] | usd}} </td>
+                </tr>
+            </tfoot>
+        </table>
+
+    </main>
+{% endblock %}
